@@ -50,6 +50,13 @@ services:
     networks:
       - beacon-priv
       - my-app-network
+  
+  mongo-seed:
+    build: .
+    networks:
+      - beacon-priv
+    depends_on:
+      - db
 
   mongo-express:
     image: mongo-express
@@ -121,12 +128,14 @@ services:
   # and we don't need a delay in-between. We can rely on the depends_on only.
 
   idp:
-    #image: jboss/keycloak
-    image: sleighzy/keycloak
+    # amd64
+    image: jboss/keycloak
+    # arm64
+    # image: sleighzy/keycloak
     hostname: idp
     container_name: idp
     environment:
-      # - KEYCLOAK_FRONTEND_URL=http://idp:8080/auth
+      - KEYCLOAK_FRONTEND_URL=http://idp:8080/auth
       # - KEYCLOAK_LOGLEVEL=DEBUG
       # - ROOT_LOGLEVEL=DEBUG
       - KEYCLOAK_USER=admin
