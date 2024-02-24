@@ -35,7 +35,9 @@ docker-compose up -d --build
 
 With `mongo-express` we can see the contents of the database at [http://localhost:8081](http://localhost:8081).
 
-#### Load the data
+#### Load the data (manual process)
+
+> **_NOTE:_** The manual import of data records is no longer required. There is a mongo-seed container in the docker-compose.yml file for loading the data into the mongo database. If you want to expand the data records, you can do this in the seed.sh script.
 
 To load the database we execute the following commands:
 
