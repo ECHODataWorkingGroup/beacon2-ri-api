@@ -538,10 +538,10 @@ function Layout (props) {
           BEACON VALIDATOR
         </NavLink>
         <div className='logos'>
-          <a href='https://www.lmu-klinikum.de/hauner/kinder-und-kinderpoliklinik' target='_blank' rel="noreferrer">
+          <a href='https://ega-archive.org/' target='_blank' rel="noreferrer">
             <img
               className='beaconLogo'
-              src='https://cdn.lmu-klinikum.de/e2c38c9ae18c5ccb/6b03d7cae48a/v/bfc5daf34b91/Hauner-Kubus-Logo-neu.png'
+              src='https://legacy.ega-archive.org/images/logo.png'
               alt='beaconEgaLogo'
             ></img>
           </a>
