@@ -50,6 +50,13 @@ services:
     networks:
       - beacon-priv
       - my-app-network
+  
+  mongo-seed:
+    build: .
+    networks:
+      - beacon-priv
+    depends_on:
+      - db
 
   mongo-express:
     image: mongo-express
@@ -121,7 +128,7 @@ services:
   # and we don't need a delay in-between. We can rely on the depends_on only.
 
   idp:
-    #image: jboss/keycloak
+    # image: jboss/keycloak
     image: sleighzy/keycloak
     hostname: idp
     container_name: idp
