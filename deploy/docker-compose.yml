@@ -128,14 +128,12 @@ services:
   # and we don't need a delay in-between. We can rely on the depends_on only.
 
   idp:
-    # amd64
-    image: jboss/keycloak
-    # arm64
-    # image: sleighzy/keycloak
+    # image: jboss/keycloak
+    image: sleighzy/keycloak
     hostname: idp
     container_name: idp
     environment:
-      - KEYCLOAK_FRONTEND_URL=http://idp:8080/auth
+      # - KEYCLOAK_FRONTEND_URL=http://idp:8080/auth
       # - KEYCLOAK_LOGLEVEL=DEBUG
       # - ROOT_LOGLEVEL=DEBUG
       - KEYCLOAK_USER=admin
